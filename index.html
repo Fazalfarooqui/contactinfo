@@ -1,0 +1,184 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head><script src="angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+
+    <script src="angular-messages.min.js"></script>
+    <script src="jquery-3.3.1.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+    <script src="controller.js"></script>
+
+
+ <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->  
+
+    <style>
+        table#showdata {
+        width:100%;
+        background-color:ButtonShadow;
+        text-align:justify;
+        border:solid 1px black;
+        
+        }
+        td {
+          padding:5px;
+            text-align:center;
+            padding-top:10px;
+            text-emphasis-color:whitesmoke;
+           
+            text-decoration-color:antiquewhite;
+           background-color:lightblue;
+           border-collapse:collapse;
+            
+        }
+        
+
+
+       th {
+            padding:15px;
+            text-align:center;
+            text-decoration-color:ButtonShadow;
+           
+            border: 1px solid black;
+        }
+
+    </style>
+  <title>Contact Information</title>
+<!-- custom-theme -->
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Admission Enquiry Form web template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/../fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
+</head>
+<body >
+		<div class="content-w3ls">
+			<h1 class="agile-head text-center">Contact Information</h1>
+			<div class="form-w3layouts"  >					
+				<form name="myForm" ng-app="contactapp" ng-controller="contactcontroller" novalidate  >
+					<div class="form-control"> 
+						<label class="header">First Name <span>:</span></label>
+						<input type="text" id="fname" name="fname" placeholder="First Name" ng-model="fname" autofocus ng-maxlength="10" ng-pattern="/^[a-zA-Z]*$/" required>
+                        <span style="color:gray" ng-show="myForm.fname.$touched && myForm.fname.$invalid && myForm.fname.$error.required">The first name is required.</span>
+                        <span style="color:gray" ng-show="myForm.fname.$error.maxlength">Max 10 chars.</span>
+                        <span style="color:gray" ng-show="myForm.fname.$error.pattern">Only Characters.</span>
+
+                       
+
+						<div class="clear"></div>
+					</div>
+                    <div class="form-control" > 
+						<label class="header">Last Name <span>:</span></label>
+						<input type="text" id="lname" placeholder="Last Name" name="lname" ng-maxlength="10" ng-model="lname" ng-pattern="/^[a-zA-Z]*$/" required>
+                        <span style="color:gray" ng-show="myForm.lname.$touched && myForm.lname.$invalid && myForm.lname.$error.required">The last name is required.</span>
+                        <span style="color:gray" ng-show="myForm.lname.$error.maxlength">Max 10 chars.</span>
+                        <span style="color:gray" ng-show="myForm.lname.$error.pattern">Only Characters.</span>
+                                               
+						<div class="clear"></div>
+					</div>
+				
+					<div class="form-control">	
+						<label class="header">Email Address <span>:</span></label>
+						<input type="email" id="email" name="email" placeholder="Valid Email Id" ng-model="email" required>
+                      
+  
+                            <span style="color:gray" ng-show="myForm.email.$touched && myForm.email.$error.required">Email is required.</span>
+                           <span style="color:gray" ng-show="myForm.email.$error.email">Invalid email address.Please try again.</span>
+                              
+
+                        
+						<div class="clear"></div>
+					</div>
+				
+					<div class="form-control">	
+						<label class="header">Phone Number <span>:</span></label>	
+						<input type="tel" id="usrtel" name="usrtel" placeholder="Enter phone number " ng-model="usrtel"  ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"  required>
+						<span style="color:gray" ng-show="myForm.usrtel.$touched && myForm.usrtel.$error.required">Please enter phone number.</span>
+                           <span style="color:gray" ng-show="myForm.usrtel.$error.pattern">Must be a valid 10 digit phone number</span>
+                            
+                        <div class="clear"></div>
+					</div>	
+					<div class="form-control">
+							<label class="header">Status</label>
+							
+                            <select name="status" ng-model="status" placeholder="select status" required >
+
+								<option value="">select status</option>
+								<option value="Active">Active </option>
+								<option value="Inactive">Inactive </option>
+								</select>
+                        <span style="color:gray" ng-show="myForm.status.$touched && myForm.status.$error.required">Please select your status</span>
+ 
+                        
+							<div class="clear"></div>
+					</div>
+
+						<div class="form-control w3ls-end">
+						
+						<input type="submit" class="register" ng-hide="disablesubmit"  ng-click="myForm.$valid && adddata()" value="Submit"  >
+                        <input type="submit" class="register" ng-hide="disableupdate" ng-click="myForm.$valid && updatedata()" value="update" >
+						<div class="clear"></div>
+					</div>	
+                    <br />
+                    <span style="color:lightblue;" >List of Added contacts..</span>
+                    	<table id="showdata" style="border: 1px solid black; ">
+                            <thead style="padding:5px;text-align:justify; background-color:#2b768a;border: 1px solid black;">
+                            <th >
+                                Sr.No
+                            </th>
+                                <th style="border: 1px solid black;">
+                                First Name
+                            </th>
+                                <th style="border: 1px solid black;">
+                                Last Name
+                            </th>
+                                <th >
+                                Email
+                            </th>
+                               <th style="border: 1px solid black;">
+
+                                    Contact Number
+                                </th>
+                                <th style="border: 1px solid black;">
+                                Status
+
+                                </th>
+                                <th style="border: 1px solid black;">
+
+                                    Action
+                                </th>
+                                </thead>
+                            
+                            <tr ng-repeat="cont in contactlist" >
+                                <td style="border: 1px solid black;">{{cont.srno}}</td>
+                                <td style="border: 1px solid black;">{{cont.fname}}</td>
+                                <td style="border: 1px solid black;">{{cont.lname}}</td>
+                                <td style="border: 1px solid black;">{{cont.email}}</td>
+                                <td style="border: 1px solid black;">{{cont.usrtel}}</td>
+                                <td style="border: 1px solid black;">{{cont.status}}</td>
+                                
+                                <td style="border: 1px solid black;"><input type="button" value="Delete" style="background-color:gray; text-decoration-color:yellow;" ng-Click="deletedata(cont)" />
+                                <input type="button" style="background-color:gray; text-decoration-color:yellow;" value="Edit" ng-Click="editdata(cont)" /></td>
+                            </tr>
+						</table>
+				</form>
+			</div>
+		</div>
+    <div >
+						
+						
+						<div class="clear"></div>
+					</div>
+		<div class="clear"></div>
+		
+</body>
+</html>
+
