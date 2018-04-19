@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 <html>
 <head><script src="angular.min.js"></script>
@@ -165,7 +165,7 @@
                                 <td style="border: 1px solid black;">{{cont.usrtel}}</td>
                                 <td style="border: 1px solid black;">{{cont.status}}</td>
                                 
-                                <td style="border: 1px solid black;"><input type="button" value="Delete" style="background-color:gray; text-decoration-color:yellow;" ng-Click="deletedata(cont)" />
+                                <td style="border: 1px solid black;"><input type="button" value="Delete" style="background-color:gray; text-decoration-color:yellow;" ng-hide="disabledelete" ng-Click="deletedata(cont)" />
                                 <input type="button" style="background-color:gray; text-decoration-color:yellow;" value="Edit" ng-Click="editdata(cont)" /></td>
                             </tr>
 						</table>
