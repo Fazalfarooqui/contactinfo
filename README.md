@@ -7,7 +7,7 @@ All the added records will be listed below.You can view the list of all the cont
 
 >>>>>Getting Started<<<<<<<
 
-1>Copy the files and paste it to your local machine in a folder.
+1>Copy the files and paste it on your local machine.
 
 2>Open this(project/website) in Visual studio or DreamViewer or in any other editor.
 
@@ -15,4 +15,4 @@ All the added records will be listed below.You can view the list of all the cont
 
 >>>>>>>>>>>>>>>>>>>>Prerequisites<<<<<<<<<<<<<<
 
-You can give direct link for angularjs and jquery (on index page)but i downloaded these.js files and added it to project.
+You can give direct link for angularjs and jquery (on index page)but i downloaded these  files and added it to project.
