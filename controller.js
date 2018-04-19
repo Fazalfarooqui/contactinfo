@@ -1,7 +1,9 @@
-﻿var app = angular.module("contactapp", ['ngMessages']);
+var app = angular.module("contactapp", ['ngMessages']);
 app.controller("contactcontroller", function ($scope) {
     $scope.disablesubmit = false;
     $scope.disableupdate = true;
+    $scope.disabledelete = false;
+
 
     $scope.contactlist = [];
     $scope.adddata = function () {
@@ -47,6 +49,7 @@ app.controller("contactcontroller", function ($scope) {
         $scope.status = cont.status;
         $scope.disablesubmit = true;
         $scope.disableupdate = false;
+        $scope.disabledelete = true;
 
     };
 
@@ -64,6 +67,7 @@ app.controller("contactcontroller", function ($scope) {
                 e.usrtel=$scope.usrtel;
                 e.status=$scope.status;
                 $scope.disablesubmit = false;
+                $scope.disabledelete = false;
             }
         });
 
